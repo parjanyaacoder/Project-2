@@ -1,0 +1,52 @@
+import java.util.*;
+class mmm
+{
+public static void main()
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter number of numbers");
+int n=sc.nextInt();
+System.out.println("Enter elements");
+int arr[]=new int[n];
+for (int i=0;i<n;i++)
+arr[i]=sc.nextInt();
+int sum=0,mean,mode,f=0,q=0,d=0,median,k,p,temp;
+for (int j=0;j<n;j++)
+sum=sum+arr[j];
+mean=sum/n;
+for(k=0;k<n;k++)
+{
+for(p=k+1;p<n;p++)
+{
+  if(arr[p]==arr[k])
+  f++;
+  }
+  if(f>q)
+  {
+  q=f;
+  d=arr[k];
+  }
+  }
+  mode=d;
+  for (int i = 0; i < n; i++) 
+        {
+            for (int j = i + 1; j < n; j++) 
+            {
+                if (arr[i] > arr[j]) 
+                {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+            if(n%2==0)
+            median =(arr[n/2-1]+arr[(n/2-1)+1])/2;
+            else 
+            median =arr[n/2];
+            System.out.println(mean);
+             System.out.println(median);
+             System.out.println(mode);
+             }
+             }
+                           
